@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 2</title>
+
+    <style>
+       html, body{
+            height: 100%;
+            margin: 0;
+            transition: background-color 0.3s;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+        }
+
+        button{
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+<button id="bigButton" type="button">Click me </button>
+
+<script>
+
+    function getColor(){
+        return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6,'0');
+    }
+
+    function backgroundChange(){
+        const button = document.getElementById("bigButton");
+        button.addEventListener("click", () => {
+            alert("Button clicked");
+            document.body.style.backgroundColor = getColor();
+        });
+        
+    }
+    backgroundChange();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 4</title>
+
+    <style>
+        .box-mod{
+            width: 150px;
+            height: 200px;
+            padding: 30px;
+            margin: 17px;
+            background-color:brown ;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            border: 6px solid blanchedalmond;
+            color: white;
+        }
+
+        .box-mod:hover{
+            border-color: green;
+        }
+
+        .box-mod.clicked{
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-mod" id="box">Box Model</div>
+
+    <script>
+        const box = document.getElementById('box')
+
+        box.addEventListener('click', () => {
+            box.classList.toggle("clicked")
+        })
+
+        box.addEventListener('mouseover', () =>{
+            box.style.borderColor = "red"
+        } )
+        
+        box.addEventListener('mouseout', () => {
+            box.style.borderColor ="blue"
+        })
+    </script>
+    
+    
+</body>
+</html>

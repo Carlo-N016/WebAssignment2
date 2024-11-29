@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 3</title>
+
+    <style>
+        ul{
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        li{
+            padding: 10px;
+            margin: 5px 0;
+            background-color: rgb(106, 129, 230);
+            border: 1px solid #ccc;
+            cursor: pointer;
+            transition: background-color 0.3 ease, color 0.3s ease;
+        }
+        li:hover{
+            background-color: #6b9641;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>List 1</li>
+        <li>List 2</li>
+        <li>List 3</li>        
+    </ul>
+
+    <script>
+        //function to add a new list item
+        function newList(){
+            const ul = document.getElementById("list")
+            const li = document.createElement("li")
+            li.textContent = "List 4"
+            ul.appendChild(li)
+        }
+
+        function getStrings(length){
+            const symChar = "ABCDEFGHIJKLMOP"
+            let result = ""
+            for (let i = 0; i < length; i++){
+                result += symChar.charAt(Math.floor(Math.random() * symChar.length));
+            }
+            return result;
+        }
+
+        function clickEvents() {
+                const items = document.querySelectorAll("li")
+                items.forEach(item => {
+                    item.addEventListener("click", () => {
+                        item.textContent = getStrings(10);
+                    })
+                })
+            }
+
+        window.onload = function(){
+            newList();
+            clickEvents();
+        }
+
+
+    </script>
+</body>
+</html>
